@@ -27,8 +27,8 @@ def main():
         for i in range(n):
             numbers.append(num[i])
     else:
-        #file_path = input("")
-        with open(f"D:/MyProjects/python projects/poh.txt", "r") as file:
+        file_path = input("")
+         with open(f"./test/{file_path}", "r") as file:
             n = int(file.readline())
             numbers = list(map(int, file.readline().split()))
 
