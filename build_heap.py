@@ -16,7 +16,8 @@ def main():
     
     input_type = input("")
     if "I" in input_type:
-        n = int(input())
+        n = input()
+        n = int(n.replace("\\r\\n",""))
         assert 1 <= n <= 100000
         numbers = []
         for i in range(n):
