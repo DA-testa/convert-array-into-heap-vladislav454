@@ -18,13 +18,11 @@ def main():
     
     input_type = input("")
     if "I" in input_type:
-        n = input()
-        n = int(n.replace("\\r\\n",""))
+        n = int(input())
         assert 1 <= n <= 100000
         numbers = []
         for i in range(n):
-            num = input()
-            num = int(num.replace("\\r\\n",""))
+            num = int(input().split())
             assert 0 <= num <= 109
             numbers.append(num)
     else:
