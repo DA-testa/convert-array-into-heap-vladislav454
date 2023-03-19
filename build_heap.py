@@ -1,3 +1,4 @@
+
 def build_heap(numbers):
     swaps = []
 
@@ -17,13 +18,15 @@ def main():
     
     input_type = input("")
     if "I" in input_type:
-        n = int(input())
+        n = input()
+        n = int(n.replace("\\r\\n",""))
         assert 1 <= n <= 100000
         numbers = []
+        num = input().replace("\\r\\n","")
+        num = num.split()
         for i in range(n):
-            num = int(input().replace("\\r\\n",""))
-            assert 0 <= num <= 109
-            numbers.append(num)
+            assert 0 <= int(num[i]) <= 109
+            numbers.append(num[i])
     else:
         file_path = input("")
         with open(f"./tests/{file_path}", "r") as file:
