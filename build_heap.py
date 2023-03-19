@@ -28,7 +28,7 @@ def main():
             numbers.append(num[i])
     else:
         file_path = input("")
-         with open(f"./test/{file_path}", "r") as file:
+        with open(f"./test/{file_path}", "r") as file:
             n = int(file.readline())
             numbers = list(map(int, file.readline().split()))
 
