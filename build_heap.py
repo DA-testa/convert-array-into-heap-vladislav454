@@ -6,9 +6,9 @@ def build_heap(numbers):
         j = i
         while j > 0 and numbers[(j-1)//2] > numbers[j]:
             parent = (j-1)//2
-            swaps.append((parent, j))
             numbers[j], numbers[parent] = numbers[parent], numbers[j]
             j = parent
+            swaps.append((parent, j))
 
     return swaps
 
@@ -27,23 +27,18 @@ def main():
         for i in range(n):
             numbers.append(num[i])
     else:
-        file_path = input("")
-        with open(f"./tests/{file_path}", "r") as file:
+        #file_path = input("")
+        with open(f"D:/MyProjects/python projects/poh.txt", "r") as file:
             n = int(file.readline())
-            assert 1 <= n <= 100000
-            numbers = []
-            num = file.readline()
-            num = num.split()
-            for i in range(n):
-                numbers.append(num[i])
+            numbers = list(map(int, file.readline().split()))
 
     assert len(numbers) == n
 
     swaps = build_heap(numbers)
 
     print(len(swaps))
-    for i, j in swaps:
-    	print(i, j)
+    #for i, j in swaps:
+    	#print(i, j)
 
 
 if __name__ == "__main__":
