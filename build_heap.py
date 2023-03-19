@@ -23,7 +23,6 @@ def main():
         num = input()
         num = num.split()
         for i in range(n):
-        	assert 0 <= int(num[i]) <= 109
         	numbers.append(num[i])
     else:
         file_path = input("")
