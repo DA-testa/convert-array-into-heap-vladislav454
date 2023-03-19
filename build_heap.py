@@ -1,4 +1,3 @@
-
 def build_heap(numbers):
     swaps = []
 
@@ -6,39 +5,37 @@ def build_heap(numbers):
         j = i
         while j > 0 and numbers[(j-1)//2] > numbers[j]:
             parent = (j-1)//2
+            swaps.append((parent, j))
             numbers[j], numbers[parent] = numbers[parent], numbers[j]
             j = parent
-            swaps.append((parent, j))
 
     return swaps
-
 
 
 def main():
     
     input_type = input("")
     if "I" in input_type:
-        n = input()
-        n = int(n.replace("\\r\\n",""))
+        n = int(input())
         assert 1 <= n <= 100000
         numbers = []
-        num = input().replace("\\r\\n","")
-        num = num.split()
         for i in range(n):
-            numbers.append(num[i])
+        	num = int(input())
+        	assert 0 <= num <= 109
+        	numbers.append(num)
     else:
         file_path = input("")
-        with open(f"./test/{file_path}", "r") as file:
+        with open(f"./tests/{file_path}", "r") as file:
             n = int(file.readline())
             numbers = list(map(int, file.readline().split()))
 
     assert len(numbers) == n
 
     swaps = build_heap(numbers)
-
+    
     print(len(swaps))
-    #for i, j in swaps:
-    	#print(i, j)
+    for i, j in swaps:
+        print(i, j)
 
 
 if __name__ == "__main__":
