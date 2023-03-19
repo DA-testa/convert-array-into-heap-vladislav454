@@ -24,7 +24,7 @@ def main():
         numbers = []
         for i in range(n):
             num = input()
-            num = int(n.replace("\\r\\n",""))
+            num = int(num.replace("\\r\\n",""))
             assert 0 <= num <= 109
             numbers.append(num)
     else:
