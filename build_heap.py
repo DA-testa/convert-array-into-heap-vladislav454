@@ -33,10 +33,10 @@ def main():
             n = int(file.readline())
             assert 1 <= n <= 100000
             numbers = []
+            num = file.readline().split()
             for i in range(n):
-                num = int(file.readline())
-                assert 0 <= num <= 109
-                numbers.append(num)
+                assert 0 <= int(num[i]) <= 109
+                numbers.append(num[i])
 
     assert len(numbers) == n
 
