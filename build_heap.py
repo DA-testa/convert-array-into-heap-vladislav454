@@ -25,7 +25,6 @@ def main():
         num = input().replace("\\r\\n","")
         num = num.split()
         for i in range(n):
-            assert 0 <= int(num[i]) <= 109
             numbers.append(num[i])
     else:
         file_path = input("")
@@ -36,7 +35,6 @@ def main():
             num = file.readline()
             num = num.split()
             for i in range(n):
-                assert 0 <= int(num[i]) <= 109
                 numbers.append(num[i])
 
     assert len(numbers) == n
