@@ -1,4 +1,3 @@
-
 def build_heap(numbers):
     swaps = []
 
@@ -22,7 +21,7 @@ def main():
         assert 1 <= n <= 100000
         numbers = []
         for i in range(n):
-            num = int(input().split())
+            num = int(input().replace("\\r\\n",""))
             assert 0 <= num <= 109
             numbers.append(num)
     else:
