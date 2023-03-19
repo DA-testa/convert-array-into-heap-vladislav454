@@ -20,10 +20,11 @@ def main():
         n = int(n.replace("\\r\\n",""))
         assert 1 <= n <= 100000
         numbers = []
+        num = input()
+        num = num.split()
         for i in range(n):
-        	num = int(input())
-        	assert 0 <= num <= 109
-        	numbers.append(num)
+        	assert 0 <= int(num[i]) <= 109
+        	numbers.append(num[i])
     else:
         file_path = input("")
         with open(f"./tests/{file_path}", "r") as file:
@@ -33,7 +34,7 @@ def main():
     assert len(numbers) == n
 
     swaps = build_heap(numbers)
-    
+
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
